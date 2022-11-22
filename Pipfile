@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+data-generation = {editable = true, path = "."}
+
+[dev-packages]
+black = "*"
+pylint = "*"
+pytest = "*"
+
+
+[scripts]
+format = "bash -c \"make format\""
+lint = "bash -c \"make lint\""
+test = "bash -c \"make test\""
+build = "bash -c \"make build\""
+
+[requires]
+python_version = "3.10"
