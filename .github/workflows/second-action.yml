@@ -4,7 +4,7 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     steps:
-      - name: Test the code
-        run: pip freeze
+      - name: Install Pipenv
+        run: pip install pipenv
           
 
