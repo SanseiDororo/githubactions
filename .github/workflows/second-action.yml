@@ -8,7 +8,7 @@ jobs:
         run: pip install pipenv
       - name: Copy the code
         uses: actions/checkout@v3
-      - name: Install dependecies
-        run: pipenv install -e . 
+      - name: Try tests
+        run: python -m pytest -vv 
          
 
