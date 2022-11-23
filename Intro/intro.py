@@ -31,6 +31,8 @@ def intro():
             * jobs: (jobs to execute)
             * runs-on: (defines the running enviromnent. | enables running multiple commands)
             * steps: (list of steps to execute)
+            * uses: (call defined github action)
+            * with: (takes keywords to additionally configure the action)
 
         """
         )

@@ -1,10 +1,12 @@
 name: Establish Pipenv Environment
 on: push
 jobs:
-  tests:
+  create_environment:
     runs-on: ubuntu-latest
     steps:
       - name: Install Pipenv
         run: pip install pipenv
-          
+      - name: Copy the code
+        uses: actions/checkout@v3
+         
 
