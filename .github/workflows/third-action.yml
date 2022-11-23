@@ -1,4 +1,4 @@
-name: Pipenv Action
+name: Pipenv Workflow
 on: push
 jobs:
   establish-python-environmnet:
