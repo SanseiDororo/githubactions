@@ -34,3 +34,21 @@ def intro():
 
         """
         )
+
+    with st.expander("Events"):
+        st.write(
+            """
+            Github offers the following repository related events:
+
+            * push : (pushing commits)
+            * pull_request: (pull_request | opened or closed)
+            * create (a branch or tag was created)
+            * fork (repository was forked)
+            * issues (issue opened or deleted)
+            * issue_comment (issue or pull request comment action)
+            * watch (repository was stared)
+            * discussion (discussion action)
+
+
+        """
+        )

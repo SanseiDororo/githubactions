@@ -1,0 +1,11 @@
+name: Workflow for push actions
+on: workflow_dispatch
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Printing commands
+        run: |
+          echo "This is greeting from the working environment"
+          echo "Goodbay from the working environment"
+
