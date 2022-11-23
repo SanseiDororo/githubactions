@@ -1,7 +1,7 @@
-name: Pipenv Workflow
-on: push
+name: Python CI/CD flow for Pipenv Projects
+on: [push]
 jobs:
-  establish-python-environmnet:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -14,9 +14,20 @@ jobs:
         uses: VaultVulp/action-pipenv@v2.0.1
         with:
           command: install -d 
-  
-         
-
-
-         
-
+      - name: Format code
+        uses: VaultVulp/action-pipenv@v2.0.1
+        with:
+          command: run format
+      - name: Lint code
+        uses: VaultVulp/action-pipenv@v2.0.1
+        with:
+          command: run lint
+      - name: test code
+        uses: VaultVulp/action-pipenv@v2.0.1
+        with:
+          command: run test
+      - name: build container
+        uses: VaultVulp/action-pipenv@v2.0.1
+        with:
+          command: run build
+      
