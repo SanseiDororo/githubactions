@@ -35,7 +35,7 @@ def intro():
         """
         )
 
-    with st.expander("Events"):
+    with st.expander("Triggers & Events"):
         st.write(
             """
             Github offers the following repository related events:
@@ -48,6 +48,15 @@ def intro():
             * issue_comment (issue or pull request comment action)
             * watch (repository was stared)
             * discussion (discussion action)
+
+            And repository non-related events:
+
+            * workflow_dispatch: manually trigger workflow
+            * repository_dispatch: REST API request triggers workflow
+            * schedule: workflow schedule
+            * workflow_call: called by other workflows
+
+            [Official Documentation](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows)
 
 
         """

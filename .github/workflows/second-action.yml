@@ -1,11 +1,11 @@
-name: Workflow for push actions
-on: workflow_dispatch
+name: Establish Pipenv Environment
+on: push
 jobs:
-  first-job:
+  tests:
     runs-on: ubuntu-latest
     steps:
-      - name: Printing commands
+      - name: Install pytest & test the code
         run: |
-          echo "This is greeting from the working environment"
-          echo "Goodbay from the working environment"
+          pip install pytest
+          python -m pytest -vv 
 
