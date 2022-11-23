@@ -9,6 +9,6 @@ jobs:
       - name: Copy the code
         uses: actions/checkout@v3
       - name: Install dependecies
-        run: pipenv install --dev black pylint pytest 
+        run: pipenv install -e . 
          
 
