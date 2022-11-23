@@ -9,6 +9,8 @@ jobs:
       - name: Copy the code
         uses: actions/checkout@v3
       - name: Try tests
-        run: python -m pytest -vv 
+        run: |
+          pip install pytest
+          python -m pytest -vv 
          
 
