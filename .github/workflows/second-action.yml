@@ -4,8 +4,7 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     steps:
-      - name: Install pytest & test the code
-        run: |
-          pip install pytest
-          python -m pytest -vv 
+      - name: Test the code
+        run: pip freeze
+          
 
