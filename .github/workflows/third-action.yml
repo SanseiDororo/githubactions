@@ -1,5 +1,5 @@
 name: Python CI/CD flow for Pipenv Projects
-on: [push]
+on: workflow_dispatch
 jobs:
   ci:
     runs-on: ubuntu-latest
