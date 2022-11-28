@@ -25,4 +25,4 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pipenv install --dev --verbose
+          pipenv install -e .
