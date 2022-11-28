@@ -12,6 +12,6 @@ jobs:
       - name: Run image
         uses: tiagovrtr/actions-pipenv@v1
         with:
-          pipenv-version: v2022.11.15
+          pipenv-version: v2022.11.24
       - name: View pipenv --help
         run: pipenv --help
