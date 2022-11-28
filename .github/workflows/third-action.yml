@@ -13,5 +13,8 @@ jobs:
         uses: tiagovrtr/actions-pipenv@v1
         with:
           pipenv-version: v2022.11.24
-      - name: View pipenv --help
-        run: pipenv --help
+      - name: Install dependecies
+        run: |
+          pipenv install --dev black pylint pytest 
+      - name: Test code
+        run: pipenv run test
