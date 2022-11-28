@@ -25,4 +25,4 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pipenv install -e .
+          pipenv install --dev black pylint pytest 
