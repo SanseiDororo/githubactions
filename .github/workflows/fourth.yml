@@ -16,13 +16,13 @@ jobs:
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4
         with:
-          python-version: "3.10"
+          python-version: "3.9"
           cache: "pipenv"
 
       - name: Install pipenv
         run: |
           python -m pip install --upgrade pipenv wheel
 
-      - name: Test pipenv functioning
+      - name: Install dependencies
         run: |
-          pipenv --help
+          pipenv install --deploy --dev --verbose
