@@ -1,12 +1,23 @@
 name: Python CI/CD flow for Pipenv Projects
 on: [push]
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
+  ci:
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10"]
+        pipenv-version: ["v2022.11.25"]
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
         with:
-          python-version: '3.10' 
-      - run: python -V
+          python-version: ${{ matrix.python-version }}
+          cache: "pipenv"
+      - name: Run image
+        uses: tiagovrtr/actions-pipenv@v1
+        with:
+          pipenv-version: ${{ matrix.pipenv-version }}
+      - name: View pipenv --help
+        run: pipenv --help
