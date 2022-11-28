@@ -13,5 +13,5 @@ jobs:
         uses: tiagovrtr/actions-pipenv@v1
         with:
           pipenv-version: v2022.11.24
-      - name: Install development environment
-        run: pipenv install -d
+      - name: check version
+        run: pipenv -h
