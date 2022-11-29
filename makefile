@@ -11,7 +11,7 @@ develop:
 
 format:
 	black *.py 
-	black Intro/*py
+	black src/Intro/*py
 
 lint:
 	pylint --disable=R,C src/*.py
