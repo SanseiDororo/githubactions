@@ -14,13 +14,8 @@ format:
 	black src/Intro/*py
 
 lint:
-	pylint --disable=R,C src/*.py
+	pylint --disable=R,C src/Intro/*.py
 
 test:
 	python -m pytest -vv 
 
-build:
-	docker build -t deploy-fastapi .
-
-run:
-	docker run -p 127.0.0.1:8080:8080 b205bf2bba68
