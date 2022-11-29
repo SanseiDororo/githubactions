@@ -1,5 +1,5 @@
 name: Python CI/CD flow with git actions
-on: workflow_dispatch
+on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,7 +17,7 @@ jobs:
       - name: Install dependecies
         uses: VaultVulp/action-pipenv@v2.0.1
         with:
-          command: install -d 
+          command: install -d
         
       
       
