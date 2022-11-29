@@ -5,12 +5,14 @@ name = "pypi"
 
 [packages]
 data-generation = {editable = true, path = "."}
+project-layout-setup = {editable = true, path = "."}
 
 [dev-packages]
 black = "*"
 pylint = "*"
 pytest = "*"
 requests = "*"
+data-generation = {editable = true, path = "."}
 
 [scripts]
 format = "bash -c \"make format\""
@@ -19,4 +21,4 @@ test = "bash -c \"make test\""
 build = "bash -c \"make build\""
 
 [requires]
-python_version = "3.10"
+python_version = "3.10.8"
