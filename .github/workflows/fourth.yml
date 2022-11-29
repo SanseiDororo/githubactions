@@ -14,6 +14,12 @@ jobs:
         run: |
           pip install pipenv
           pipenv install --dev
+      - name: Format code
+        run: 
+          pipenv run format
+      - name: Lint code
+        run: 
+          pipenv run lint
       - name: Test code
         run: 
           pipenv run test
