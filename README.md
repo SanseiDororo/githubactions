@@ -66,5 +66,14 @@ Tester:Pytest
 - Provide real test scenarios.
 - Create docker images.
 
+#### Github Workflows
+
+Workflows stored under .github/workflows contain basic github actions. 
+
+-  basic_workflow (Sets up runner and prints Hello world. Triggered manually on dispatch.)
+-  add_existing_repo (Sets up runner and clone existing repository. Triggered mannualy on dispatch.)
+- CICDpipenv (Sets up runner, clone repo, install pipenv, install development dependecies, perform code format, lint and test in the context of single runner environment. Triggered manually on discpatch.)
+- CICDstructured (Sets up runners for: formating, linting, testing separately in a interdependent manner. If formating fails, linting is not executed.)
+
 #### Issues
 

@@ -1,4 +1,4 @@
-name: Establish Pipenv Environment
+name: Clone Existing Repository With Checkout
 on: workflow_dispatch
 jobs:
   create_environment:
@@ -8,9 +8,6 @@ jobs:
         run: pip install pipenv
       - name: Copy the code
         uses: actions/checkout@v3
-      - name: Try tests
-        run: |
-          pip install pytest
-          python -m pytest -vv 
+     
          
 
