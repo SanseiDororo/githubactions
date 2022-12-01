@@ -1,5 +1,8 @@
-name: Python CI/CD flow with cached dependencies
-on: workflow_dispatch
+name: Python CI/CD Flow With Artifacts 
+on: 
+  push:
+    branches:
+    - main
 jobs:
   format:
     runs-on: ubuntu-latest
@@ -65,5 +68,12 @@ jobs:
       - name: Test the code
         run: 
           pipenv run test
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-artifact
+          path: |
+            tests
+            test-artifact.txt
 
  
