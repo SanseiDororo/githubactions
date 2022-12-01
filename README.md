@@ -1,11 +1,9 @@
 ## Description
 
 This repository covers GitHub Action basics. In the src folder it provides streamlit app
-which can be used as a github actions cheat sheet. To run the app you need streamlit app which can be installed with the pipenv. To run the app
+which can be used as a github actions cheat sheet. To run the app you need streamlit app which can be installed with the pipenv. You can run the app with:
 
 ```
-Run Github Cheat Sheet App.
-
 streamlit run src/app.py
 ```
 
@@ -18,7 +16,7 @@ streamlit run src/app.py
 
 #### Makefile
 
-Make file covers all the necessary parts for the installation, development and deployment
+Makefile covers all the necessary parts for the installation, development and deployment
 of the package.
 
 #### Installing the project
