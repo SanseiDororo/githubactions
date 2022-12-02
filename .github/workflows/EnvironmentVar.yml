@@ -23,6 +23,5 @@ jobs:
           echo ${{secrets.TEST_SECRET}}
       - name: Show Context
         run: |
-          echo ${{context}}
           exho ${{github}}
  

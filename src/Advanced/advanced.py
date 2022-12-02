@@ -23,8 +23,7 @@ def advanced():
 
             ```
             ${{github}}
-            ${{context}}
-
+    
             ```
 
 
