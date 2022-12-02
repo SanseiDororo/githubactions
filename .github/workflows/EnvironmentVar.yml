@@ -20,5 +20,6 @@ jobs:
           echo ${{ env.VARIABLE_ONE}}
           echo $VARIABLE_TWO
           echo $VARIABLE_THREE
+          echo ${{secrets.TEST_SECRET}}
 
  
