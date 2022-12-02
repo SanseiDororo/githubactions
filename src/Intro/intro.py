@@ -16,6 +16,8 @@ def intro():
 
         Workflows can be defined for each repository under the tab actions. Workflows are defined with the yml files 
         and stored under .github/workflows. Repositories can have several workflows.
+
+        [Extensive official documentation]('https://docs.github.com/en/actions')
         
     """
     )

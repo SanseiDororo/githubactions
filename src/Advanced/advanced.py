@@ -16,16 +16,43 @@ def advanced():
     with st.expander("Context object"):
         st.write(
             """
-            Workflow yml document has several levels which are defined with reserved keywords.
+            Contexts are objects which store information about the workflow. Specific segments of the workflow
+            as for example environment variables or secrets can be used for the specific operations.
 
-            * name : (name of the workflow)
-            * on: (manually or automatically trigger events)
-            * jobs: (jobs to execute)
-            * runs-on: (defines the running enviromnent. | enables running multiple commands)
-            * steps: (list of steps to execute)
-            * uses: (call defined github action)
-            * with: (takes keywords to additionally configure the action)
+            Attributes of the context are stored in the
 
+            ```
+            ${{github}}
+            ${{context}}
+
+            ```
+
+
+            [Official Documentation Page]('https://docs.github.com/en/actions/learn-github-actions/contexts')
+
+        """
+        )
+
+    with st.expander("Execution Control"):
+        st.write(
+            """
+            Github actions provide several keywords to control execution of the jobs.
+
+            1. Conditions.
+
+            If we want to execute jobs under specific conditions, we can use if keyword.
+            
+            ```
+            - name: Upload tests
+                if: failure() && steps.id_of_the_step.outcome == 'failure'
+                uses: actions/upload-artifact@v3
+                with: 
+                    name: create-report
+                    path:test.py
+
+            ```
+
+            [Control Flow Official Documentation]('https://docs.github.com/en/actions/learn-github-actions/expressions')
         """
         )
 
