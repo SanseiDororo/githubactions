@@ -1,0 +1,24 @@
+name: Python CI/CD Flow With Artifacts 
+on: workflow_dispatch
+env:
+  VARIABLE_ONE: This is first variable
+  VARIABLE_TWO: 22
+  VARIABLE_THREE: Catch 22
+jobs:
+  env-variables:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.10.8
+        id: setup-python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.10.8 
+      - name: Variables
+        run: |
+          echo ${{ env.VARIABLE_ONE}}
+          echo $VARIABLE_TWO
+          echo $VARIABLE_THREE
+
+ 
