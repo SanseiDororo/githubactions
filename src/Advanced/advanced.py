@@ -54,6 +54,17 @@ def advanced():
                     path:test.py
 
             ```
+            Additional Example:
+            
+             ```
+            - name: Use cached
+                if: steps.cache.outputs.cache-hit != 'true'
+                run: |
+                    pip install pipenv
+                    pipenv install black
+
+            ```
+
 
             [Control Flow Official Documentation]('https://docs.github.com/en/actions/learn-github-actions/expressions')
         """
