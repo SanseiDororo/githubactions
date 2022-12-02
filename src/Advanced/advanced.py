@@ -23,6 +23,10 @@ def advanced():
 
             ```
             ${{github}}
+            
+            Human friendly output
+
+            ${{toJSON(github)}}
     
             ```
 
