@@ -40,12 +40,11 @@ jobs:
         with:
           path: ~/.local/share/virtualenvs
           key: ${{ runner.os }}-python-${{ steps.setup-python.outputs.python-version }}-pipenv-${{ hashFiles('Pipfile.lock') }} 
-      - name: Install pylint
-        if: steps.cache.outputs.cache-hit != 'true'
+      - name: Install Pipenv
         run: |
           pip install pipenv
           pipenv install pylint
-      - name: Lint Code
+      - name: Lint code
         run: 
           pipenv run lint
 
@@ -65,13 +64,11 @@ jobs:
         with:
           path: ~/.local/share/virtualenvs
           key: ${{ runner.os }}-python-${{ steps.setup-python.outputs.python-version }}-pipenv-${{ hashFiles('Pipfile.lock') }} 
-      - name: Install pytest
-        if: steps.cache.outputs.cache-hit != 'true'
+      - name: Install Pipenv
         run: |
           pip install pipenv
-          pipenv install pytest httpx
-      - name: Test the code
+          pipenv install pytest
+      - name: Test code
         run: 
           pipenv run test
-
  
