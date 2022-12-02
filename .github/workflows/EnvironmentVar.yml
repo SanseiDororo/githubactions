@@ -25,5 +25,5 @@ jobs:
         run: |
           echo ${{github}}
           echo ${{toJSON(github)}}
-          echo ${{github.env}}
+          
  
