@@ -13,7 +13,7 @@ runs:
       if: steps.cache.outputs.cache-hit != 'true'
       run: |
         pip install pipenv
-        pipenv install black pylint pytest
+        pipenv install black pylint pytest httpx
       shell: bash
 
 
