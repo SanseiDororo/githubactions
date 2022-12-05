@@ -1,0 +1,19 @@
+name: 'Install Pipenv Libraries & Cache Dependencies'
+description: 'This action installs Pipenv, development dependecies and cache them'
+runs:
+  using: 'composite'
+  steps:
+    - name: Cache dependencies
+      id: cache
+      uses: actions/cache@v3
+      with:
+        path: ~/.local/share/virtualenvs
+        key: ${{ runner.os }}-python-${{ steps.setup-python.outputs.python-version }}-pipenv-${{ hashFiles('Pipfile.lock') }} 
+    - name: Use cached
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: |
+        pip install pipenv
+        pipenv install black pylint pytest
+      shell: bash
+
+

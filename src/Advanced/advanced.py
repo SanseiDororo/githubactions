@@ -64,6 +64,14 @@ def advanced():
                     pipenv install black
 
             ```
+            
+            2. Continue even if step fails
+
+            If we want to continue job even if previous job failed, we can do it by using:
+
+            ```
+                continue-on-error: true
+            ```
 
 
             [Control Flow Official Documentation]('https://docs.github.com/en/actions/learn-github-actions/expressions')
