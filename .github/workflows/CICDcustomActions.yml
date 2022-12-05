@@ -13,7 +13,7 @@ jobs:
         with:
           python-version: 3.10.8 
       - name: Load and Cache Dependencies
-        uses: ./.github/workflow/actions/cached-dependencies
+        uses: ./.github/workflows/actions/cached-dependencies
       - name: Format code
         run: 
           pipenv run format
