@@ -11,6 +11,6 @@ runs:
     - name: Install Pipenv
       run: |
         pip install pipenv
-        pipenv install black
+        pipenv install black pylint pytest httpx
       shell: bash
 

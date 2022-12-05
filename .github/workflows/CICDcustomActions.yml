@@ -1,4 +1,4 @@
-name: Python CI/CD flow with cached dependencies
+name: Python CI/CD flow With Composite Actions
 on: push
 jobs:
   format:
@@ -17,11 +17,13 @@ jobs:
       - name: Format code
         run: 
           pipenv run format
+
   lint:
     runs-on: ubuntu-latest
     needs: format
     steps:
-      - uses: actions/checkout@v3
+      - name: Get Repo Code
+        uses: actions/checkout@v3
       - name: Set up Python 3.10.8
         id: setup-python
         uses: actions/setup-python@v4
@@ -29,9 +31,6 @@ jobs:
           python-version: 3.10.8 
       - name: Load and Cache Dependencies
         uses: ./.github/actions/cached-dependencies
-      - name: Format code
-        run: 
-          pipenv run format
       - name: Lint Code
         run: 
           pipenv run lint
@@ -40,15 +39,17 @@ jobs:
     runs-on: ubuntu-latest
     needs: lint
     steps:
-      - name: Get repo code
+      - name: Get Repo Code
         uses: actions/checkout@v3
+      - name: Set up Python 3.10.8
+        id: setup-python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.10.8 
       - name: Load and Cache Dependencies
         uses: ./.github/actions/cached-dependencies
-      - name: Format code
+      - name: Test Code
         run: 
-          pipenv run format
-      - name: Test the code
-        run: 
-          pipenv version
+          pipenv run test
 
  
