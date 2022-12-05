@@ -3,22 +3,14 @@ description: 'This action installs Pipenv, development dependecies and cache the
 runs:
   using: 'composite'
   steps:
-    - name: Set up Python 3.10.8
-      id: setup-python
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.10.8 
-    - name: Cache dependencies
-      id: cache
+    - name: Cache Pipenv 
       uses: actions/cache@v3
       with:
         path: ~/.local/share/virtualenvs
         key: ${{ runner.os }}-python-${{ steps.setup-python.outputs.python-version }}-pipenv-${{ hashFiles('Pipfile.lock') }} 
-    - name: Use cached
-      if: steps.cache.outputs.cache-hit != 'true'
+    - name: Install Pipenv
       run: |
         pip install pipenv
-        pipenv install black pylint pytest httpx
+        pipenv install black
       shell: bash
-
 
